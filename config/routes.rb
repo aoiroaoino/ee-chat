@@ -1,4 +1,6 @@
 EeChat::Application.routes.draw do
+  get "room/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
