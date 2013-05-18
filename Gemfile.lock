@@ -37,10 +37,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    em-websocket (0.5.0)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.5.3)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    hashie (2.0.5)
     hike (1.2.2)
+    http_parser.rb (0.5.3)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -52,6 +60,17 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.3)
+    multipart-post (1.2.0)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.16)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     polyglot (0.3.3)
     pusher (0.11.3)
       multi_json (~> 1.0)
@@ -87,6 +106,7 @@ GEM
       sass (>= 3.1.10)
       tilt (~> 1.3)
     signature (0.1.7)
+    simple_oauth (0.2.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -98,6 +118,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (4.6.2)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (0.3.37)
     uglifier (2.1.0)
       execjs (>= 0.3.0)
@@ -108,10 +132,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  em-websocket
   jquery-rails
   json
+  omniauth-twitter
   pusher
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
+  twitter
   uglifier (>= 1.0.3)

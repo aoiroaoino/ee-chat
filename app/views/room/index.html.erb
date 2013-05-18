@@ -1,4 +1,11 @@
-<h1>EE-Chatへようこそ！!</h1>
+<h1>EE-Chatへようこそ！</h1>
+<h2>ゆっくりしていってね！ <%= @current_user.name %> さん</h2>
+
+<% if @current_user.name == "ゲスト" %>
+	<%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<% else %>
+	<%= link_to "Sign out", "/sessions/destroy" %>
+<% end %>
 
 <DIV class="scr">
 	<p id='chatfield'></p>
