@@ -14,6 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
+var deleteText =function(){
+  document.getElementById('text_content').value = ''
+};
+
+var addMessage = function(message){
+  m = document.getElementById('chatfield').innerHTML
+  document.getElementById('chatfield').innerHTML = m + '<br>' + message
+};
+
+var scrollHeight = function(){
+  var height = document.getElementById('scr').scrollHeight
+  document.getElementById('scr').scrollTop = document.getElementById('scr').scrollHeight
+};
+
 Pusher.log = function(message) {
       if (window.console && window.console.log) window.console.log(message);
     };
@@ -21,9 +35,11 @@ Pusher.log = function(message) {
     // Flash fallback logging - don't include this in production
     WEB_SOCKET_DEBUG = true;
 
-
     var pusher = new Pusher('550cfffcc748b4bfe272');
     var channel = pusher.subscribe('channel');
     channel.bind('event', function(data) {
-      alert(data);
+      // alert(data);
+      deleteText();
+      addMessage(data);
+      scrollHeight();
     });

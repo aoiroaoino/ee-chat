@@ -7,6 +7,11 @@
 	<%= link_to "Sign out", "/sessions/destroy" %>
 <% end %>
 
-<DIV class="scr">
+<div class="scr" id='scr'>
 	<p id='chatfield'></p>
-</DIV><br>
+</div><br>
+
+<%= form_tag(url_for(:controller => :room, :action => :index), :remote => true, :method => :post) do %>
+  <input type="text" name='text' id="text_content" />
+  <input type="submit" name="submit" value="送信" /></p>
+<% end %>
