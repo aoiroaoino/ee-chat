@@ -1,6 +1,10 @@
 <h1>EE-Chatへようこそ！!</h1>
 
-<DIV class="scr">
-縦100px、横100px。テキストがこの範囲を超えた場合は、
-自動的にスクロールバーが表示されます。
-</DIV><br>
+<div class="scr" id='scr'>
+  <p id='chatfield'></p>
+</div><br>
+
+<%= form_tag(url_for(:controller => :room, :action => :index), :remote => true, :method => :post) do %>
+  <input type="text" name='text' id="text_content" />
+  <input type="submit" name="submit" value="送信" /></p>
+<% end %>
