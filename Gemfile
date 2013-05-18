@@ -42,3 +42,7 @@ gem 'em-websocket'
 
 # To use debugger
 # gem 'debugger'
+
+#gem "omniauth"
+gem "omniauth-twitter"
+gem "twitter"
